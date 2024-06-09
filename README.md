@@ -14,6 +14,7 @@ Ensure that your testing environment has:
 * An initialized Airflow metadata database, if your DAG uses elements of the metadata database like XCom. The Airflow 
 metadata database is created when Airflow is first run in an environment. You can check that it exists with `airflow db 
 check` and initialize a new database with `airflow db migrate` (`airflow db init` in Airflow versions pre-2.7).
+* Docker for running the LocalStack container (installation instructions available [here](https://www.docker.com/get-started/)).
 
 ## Installing required dependencies
 The project dependencies are provided in the `requirements.txt` file. We recommend creating a dedicated Conda 
