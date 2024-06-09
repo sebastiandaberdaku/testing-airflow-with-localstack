@@ -1,0 +1,4 @@
+apache-airflow-providers-amazon
+requests
+pytest
+testcontainers==3.7.1
