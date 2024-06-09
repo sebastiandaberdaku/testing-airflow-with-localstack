@@ -7,4 +7,4 @@ def test_example_dag():
     example_dag().test()
     # Assert that the file was correctly saved on S3
     s3_hook = S3Hook()
-    s3_hook.check_for_key("s3://test-bucket/extract/deniro.csv")
+    assert s3_hook.check_for_key("s3://test-bucket/extract/deniro.csv")
