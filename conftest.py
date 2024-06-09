@@ -21,6 +21,7 @@ def monkeypatch_session():
     yield mpatch
     mpatch.undo()
 
+
 @pytest.fixture(scope="session", autouse=True)
 def connection(monkeypatch_session, localstack, conn_id: str = "aws_default") -> None:
     """Session-scoped default AWS connection fixture pointing to LocalStack that is automatically used during tests."""
