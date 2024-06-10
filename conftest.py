@@ -2,6 +2,7 @@ import json
 from typing import Generator
 
 import pytest
+from _pytest.monkeypatch import MonkeyPatch
 from airflow.models import Connection
 from testcontainers.localstack import LocalStackContainer
 
@@ -14,9 +15,8 @@ def localstack() -> Generator[LocalStackContainer, None, None]:
 
 
 @pytest.fixture(scope="session")
-def monkeypatch_session():
+def monkeypatch_session() -> Generator[MonkeyPatch, None, None]:
     """Session-scoped monkeypatch fixture."""
-    from _pytest.monkeypatch import MonkeyPatch
     mpatch = MonkeyPatch()
     yield mpatch
     mpatch.undo()
